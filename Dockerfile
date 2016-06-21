@@ -29,7 +29,8 @@ RUN apt-get update && apt-get -y install \
     lib32stdc++6 \
     lib32z1 \
     curl \
-    wget
+    wget \
+    vim
 
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get -y install nodejs
@@ -112,8 +113,8 @@ RUN npm update && \
     cd /tmp && \
     cordova create fakeapp && \
     cd /tmp/fakeapp && \
-    cordova platform add android && \
-    cordova plugin add cordova-plugin-crosswalk-webview && \
+    cordova platform add android@5.X.X && \
+    cordova plugin add cordova-plugin-crosswalk-webview --variable XWALK_VERSION="org.xwalk:xwalk_core_library_beta:18+" && \
     cordova build android && \
     cd
 #    cd && \

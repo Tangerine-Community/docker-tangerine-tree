@@ -64,14 +64,14 @@ const makeApkDeprecated = function(req, res) {
     }
 
     // assert a valid user within requested group
-    const notAssociated = req.couchAuth.body.userCtx.roles.indexOf(`admin-${group}`) === -1;
-    if (notAssociated) {
-        return res
-            .status(HttpStatus.UNAUTHORIZED)
-            .json({
-                message : "Must be an admin to create APKs."
-            });
-    }
+    // const notAssociated = req.couchAuth.body.userCtx.roles.indexOf(`admin-${group}`) === -1;
+    // if (notAssociated) {
+    //     return res
+    //         .status(HttpStatus.UNAUTHORIZED)
+    //         .json({
+    //             message : "Must be an admin to create APKs."
+    //         });
+    // }
 
 
     // sanitize the group name
