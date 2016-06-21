@@ -6,7 +6,7 @@ Creates an instance ot Tangerine-tree
 
 To build APK's using the makeApkDeprecated method, pass T_ADMIN and T_PASS using the environment switch when you run it:
 
-docker run -d -p 80:80  --name tangerine-tree-container -v /var/log tangerine/docker-tangerine-tree -e T_ADMIN='username' -e T_PASS='password'
+docker run -d -p 80:80 -e T_ADMIN='username' -e T_PASS='password' -e T_COUCH_HOST='host.org' -e T_COUCH_PORT='5984' --name tangerine-tree-container -v /var/log tangerine/docker-tangerine-tree 
 
 # Gettings started with Docker
 
