@@ -62,4 +62,27 @@ If you are running tree on your own server, you must configure the relevant urls
           connect-src 'self' https://*.tangerinecentral.org data: blob: filesystem:">
 ````
 
+# First run caveats
+
+## First run download too long
+
+The first time you attempt the generate an APK, the app must download crosswalk plugin and compile. This may exceed the nginx setting. 
+
+## Incomplete javascript
+
+Sometimes on the first run the app does not completely compile the app's javascript. When you install the app, you'll see 
+a screen with no Assessments and "Uncaught ReferenceError: TangerineVersion is not defined" in the js debugger.
+
+To fix this issue:
+
+````
+cd /root/Tangerine-tree/tree/client
+npm start
+````
+
+This will build, compile, and minify the js. Once it displays "Finished 'default'" you may terminate the program. 
+
+
+
+
 Happy coding!
