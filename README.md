@@ -49,24 +49,12 @@ Is the container crashing on start so the above isn't working? Override the entr
 docker run -it --entrypoint=/bin/bash tangerine/docker-tangerine-tree
 ```
 
-# Configuring the client app
-
-If you are running tree on your own server, you must configure the relevant urls in the Content-Security-Policy section of index.html:
-
-````
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src *;
-          style-src 'self' 'unsafe-inline';
-          script-src 'self' https://*.tangerinecentral.org 'unsafe-inline' 'unsafe-eval' ;
-          img-src 'self' data:;
-          connect-src 'self' https://*.tangerinecentral.org data: blob: filesystem:">
-````
-
 # First run caveats
 
 ## First run download too long
 
-The first time you attempt the generate an APK, the app must download crosswalk plugin and compile. This may exceed the nginx setting. 
+The first time you attempt the generate an APK, the app must download crosswalk plugin and compile. This may exceed the nginx 
+setting. Also, check your AWS ELB timeout setting - try setting it to 300 seconds. Also, if it still fails, click APK again.
 
 ## Incomplete javascript
 
@@ -82,7 +70,9 @@ npm start
 
 This will build, compile, and minify the js. Once it displays "Finished 'default'" you may terminate the program. 
 
+# Developing the client app
 
-
+Do not develop using the code in the client directory; instead, check out [Tangerine](https://github.com/Tangerine-Community/Tangerine) 
+and develop from that repository's client. Once you are done, copy client back into this respository and tag. 
 
 Happy coding!

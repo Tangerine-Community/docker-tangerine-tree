@@ -60,13 +60,13 @@ fi
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo pwd = $(pwd)
 cd $dir
-sudo npm install
+npm install
 
 cd client
 echo pwd = $(pwd)
 
-sudo npm install
+npm install
 # workaround for sudo
-sudo npm run postinstall
+npm run postinstall
 # fix for Error: setgid group id does not exist
 sed -i'' -r 's/^( +, uidSupport = ).+$/\1false/' /usr/lib/node_modules/npm/node_modules/uid-number/uid-number.js

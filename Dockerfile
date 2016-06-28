@@ -114,7 +114,7 @@ RUN npm update && \
     cordova create fakeapp && \
     cd /tmp/fakeapp && \
     cordova platform add android@5.X.X && \
-    cordova plugin add cordova-plugin-crosswalk-webview --variable XWALK_VERSION="org.xwalk:xwalk_core_library_beta:18+" && \
+    cordova plugin add cordova-plugin-crosswalk-webview --variable XWALK_VERSION="19+" && \
     cordova build android && \
     cd
 #    cd && \
