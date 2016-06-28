@@ -120,6 +120,7 @@ RUN npm update && \
 #    cd && \
 #    rm -rf /tmp/fakeapp
 
+VOLUME /root/Tangerine-tree/tree/apks
 RUN /root/Tangerine-tree/tree/server-init.sh
 
 EXPOSE 80
